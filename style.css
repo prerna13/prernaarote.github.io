@@ -1,7 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 40px 20px;
-
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.6;
@@ -10,48 +13,44 @@ body {
 }
 
 .page-wrapper {
-    max-width: 900px;
+    width: 100%;
+    max-width: 1050px;
     margin: 0 auto;
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 220px minmax(0, 760px);
+    gap: 55px;
+    align-items: start;
 }
 
-/* Left column: photo + name + links */
 .left-column {
-    flex: 0 0 220px; /* fixed width for left column */
     text-align: center;
 }
 
 .profile-photo {
-    width: 180px;
-    height: 180px;
+    display: block;
+    width: 170px;
+    height: 170px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 15px auto;
 }
 
 .left-column h1 {
-    font-size: 24px;
-    font-weight: 600;
     margin: 10px 0 5px 0;
-    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .location {
-    margin: 0 0 10px 0;
-    color: #444;
-    font-size: 14px;
-    text-align: center;
+    margin: 0 0 15px 0;
+    color: #555;
 }
 
 .links {
     margin: 0;
     font-size: 14px;
-    text-align: center;
+    line-height: 1.9;
 }
 
 .links a {
@@ -63,18 +62,18 @@ body {
     text-decoration: underline;
 }
 
-/* Right column: nav + content */
 .right-column {
-    flex: 1;
-    min-width: 0; /* important for flex + long words */
+    min-width: 0;
+    text-align: left;
 }
 
 nav {
-    margin-bottom: 30px;
+    margin: 0 0 35px 0;
     font-size: 15px;
 }
 
 nav a {
+    margin-right: 20px;
     color: #333;
     text-decoration: none;
 }
@@ -84,9 +83,15 @@ nav a:hover {
 }
 
 h2 {
-    font-size: 22px;
+    margin: 0 0 18px 0;
+    font-size: 25px;
     font-weight: 600;
-    margin: 30px 0 15px 0;
+}
+
+h3 {
+    margin: 30px 0 12px 0;
+    font-size: 19px;
+    font-weight: 600;
 }
 
 p {
@@ -97,50 +102,49 @@ a {
     color: #0645ad;
 }
 
-ul {
-    margin: 10px 0 20px 0;
-    padding-left: 20px;
-}
-
-ul ul {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-li {
-    margin: 6px 0;
-}
-
-/* Responsive: stack on small screens */
-@media (max-width: 700px) {
-    .page-wrapper {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .left-column {
-        flex: none;
-        text-align: center;
-    }
-
-    .profile-photo {
-        width: 140px;
-        height: 140px;
-    }
-}
-h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 25px 0 10px 0;
-}
-
 .pub-list {
-    margin: 0 0 20px 0;
-    padding-left: 0;
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
 
 .pub-list li {
-    margin: 10px 0;
-    line-height: 1.5;
+    margin: 0 0 22px 0;
+    line-height: 1.55;
+}
+
+.pub-list strong {
+    font-weight: 600;
+}
+
+@media (max-width: 750px) {
+    body {
+        padding: 25px 18px;
+    }
+
+    .page-wrapper {
+        display: block;
+        max-width: 650px;
+    }
+
+    .left-column {
+        margin-bottom: 35px;
+    }
+
+    .left-column h1 {
+        white-space: normal;
+    }
+
+    .right-column {
+        text-align: left;
+    }
+
+    nav {
+        line-height: 2;
+    }
+
+    nav a {
+        display: inline-block;
+        margin-right: 14px;
+    }
 }
