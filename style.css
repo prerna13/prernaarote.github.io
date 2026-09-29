@@ -128,3 +128,19 @@ li {
         height: 140px;
     }
 }
+h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 25px 0 10px 0;
+}
+
+.pub-list {
+    margin: 0 0 20px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.pub-list li {
+    margin: 10px 0;
+    line-height: 1.5;
+}
