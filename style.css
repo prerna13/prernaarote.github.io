@@ -1,16 +1,76 @@
 body {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 25px;
+    margin: 0;
+    padding: 40px 20px;
 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: #222;
+    background: #fff;
+}
+
+.page-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Left column: photo + name + links */
+.left-column {
+    flex: 0 0 220px; /* fixed width for left column */
+    text-align: center;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left-column h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px 0 5px 0;
+    text-align: center;
+}
+
+.location {
+    margin: 0 0 10px 0;
+    color: #444;
+    font-size: 14px;
+    text-align: center;
+}
+
+.links {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.links a {
+    color: #0645ad;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Right column: nav + content */
+.right-column {
+    flex: 1;
+    min-width: 0; /* important for flex + long words */
 }
 
 nav {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     font-size: 15px;
 }
 
@@ -23,34 +83,18 @@ nav a:hover {
     text-decoration: underline;
 }
 
-h1 {
-    font-size: 36px;
-    font-weight: 500;
-    margin: 0 0 5px 0;
-}
-
-.location {
-    margin: 0 0 15px 0;
-    color: #444;
-}
-
-.links {
-    margin: 0 0 30px 0;
-}
-
-.links a {
-    color: #0645ad;
-    text-decoration: none;
-}
-
-.links a:hover {
-    text-decoration: underline;
-}
-
 h2 {
     font-size: 22px;
     font-weight: 600;
     margin: 30px 0 15px 0;
+}
+
+p {
+    margin: 15px 0;
+}
+
+a {
+    color: #0645ad;
 }
 
 ul {
@@ -65,4 +109,22 @@ ul ul {
 
 li {
     margin: 6px 0;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 700px) {
+    .page-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left-column {
+        flex: none;
+        text-align: center;
+    }
+
+    .profile-photo {
+        width: 140px;
+        height: 140px;
+    }
 }
